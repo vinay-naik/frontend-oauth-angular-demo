@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* deeppurple-amber.css
+indigo-pink.css
+pink-bluegrey.css
+purple-green.css */
+
+body {
+	margin: 0px;
+	background-color: grey;
+}
+
+html, body, .layout-fill {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+}
+
+app-root, .display-block {
+	display: block;
+}
+
+.layout-column {
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+.layout, .layout-column, .layout-row {
+    box-sizing: border-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+}
+
+.layout-align-center-center, .layout-align-end-center, .layout-align-space-around-center, .layout-align-space-between-center, .layout-align-start-center {
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+	max-width: 100%;
+	-ms-flex-pack: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
