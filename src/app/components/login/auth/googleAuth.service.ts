@@ -6,7 +6,6 @@ import { Subject } from 'rxjs/Subject';
 import { oauthConfig } from './_config/oauth.config';
 
 declare var gapi: any;
-declare var System: any;
 
 @Injectable()
 export class GoogleAuth {

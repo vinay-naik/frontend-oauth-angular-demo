@@ -3,15 +3,16 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { GoogleAuth } from './auth/googleAuth.service';
+import { FacebookAuth } from './auth/facebookAuth.service';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material';
 
-
 @Component({
+
 	selector: 'app-login',
 	templateUrl: './login.component.html',
 	styleUrls: ['./login.component.css'],
 	host: { 'class': 'layout-fill display-block' },
-	providers: [GoogleAuth]
+	providers: [GoogleAuth, FacebookAuth]
 })
 export class LoginComponent implements OnInit {
 
@@ -21,6 +22,7 @@ export class LoginComponent implements OnInit {
 		private route: ActivatedRoute,
 		public snackBar: MatSnackBar,
 		private googleAuth: GoogleAuth,
+		private facebookAuth: FacebookAuth,
 		private router: Router) { 
 
 	}
@@ -46,6 +48,9 @@ export class LoginComponent implements OnInit {
 		switch (provider) {
 			case 'google':
 				this.googleAuth.userSignIn().subscribe(this.authenticateCallback);
+				break;
+			case 'facebook':
+				this.facebookAuth.userSignIn().subscribe(this.authenticateCallback);
 				break;
 
 			default:
