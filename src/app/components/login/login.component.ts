@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgZone, NgModule } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
 		private googleAuth: GoogleAuth,
 		private facebookAuth: FacebookAuth,
 		private twitterAuth: TwitterAuth,
+		private zone: NgZone,
 		private router: Router) { 
 
 	}
@@ -41,8 +42,9 @@ export class LoginComponent implements OnInit {
 	authenticateCallback = response => {
 		console.log(response);
 		if(response.success) {
-			console.log("Here");
-			this.router.navigate([this.returnUrl]);
+			this.zone.run(() => {
+				this.router.navigate([this.returnUrl]);
+			});
 		}
 	}
 
