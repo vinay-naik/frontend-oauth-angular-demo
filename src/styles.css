@@ -6,11 +6,6 @@ indigo-pink.css
 pink-bluegrey.css
 purple-green.css */
 
-body {
-	margin: 0px;
-	background-color: grey;
-}
-
 html, body, .layout-fill {
     margin: 0;
     width: 100%;
@@ -46,4 +41,8 @@ app-root, .display-block {
 	-ms-flex-pack: center;
     -webkit-box-pack: center;
     justify-content: center;
+}
+
+app-login {
+	background: url(/assets/images/login-background.jpg);
 }
