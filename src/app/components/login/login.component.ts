@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { GoogleAuth } from './auth/googleAuth.service';
 import { FacebookAuth } from './auth/facebookAuth.service';
+import { TwitterAuth } from './auth/twitterAuth.service';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material';
 
 @Component({
@@ -12,7 +13,7 @@ import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition
 	templateUrl: './login.component.html',
 	styleUrls: ['./login.component.css'],
 	host: { 'class': 'layout-fill display-block' },
-	providers: [GoogleAuth, FacebookAuth]
+	providers: [GoogleAuth, FacebookAuth, TwitterAuth]
 })
 export class LoginComponent implements OnInit {
 
@@ -23,6 +24,7 @@ export class LoginComponent implements OnInit {
 		public snackBar: MatSnackBar,
 		private googleAuth: GoogleAuth,
 		private facebookAuth: FacebookAuth,
+		private twitterAuth: TwitterAuth,
 		private router: Router) { 
 
 	}
@@ -52,10 +54,12 @@ export class LoginComponent implements OnInit {
 			case 'facebook':
 				this.facebookAuth.userSignIn().subscribe(this.authenticateCallback);
 				break;
+			case 'twitter':
+				this.twitterAuth.userSignIn().subscribe(this.authenticateCallback);
+				break;
 
 			default:
 				this.openSnackBar('The provider "' + provider + '" has not been integrated yet.');
-
 				break;
 		}
 	};

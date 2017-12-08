@@ -15,6 +15,6 @@
       "es2017",
       "dom"
     ],
-    "types": ["fb", "gapi", "gapi.auth2"]
+    "types": ["fb", "gapi", "gapi.auth2", "firebase"]
   }
 }

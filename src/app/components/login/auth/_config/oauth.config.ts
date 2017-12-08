@@ -8,5 +8,13 @@ export const oauthConfig = {
 	facebook : {
 		app_id 			: '304597900044954',
 		sdk_version		: 'v2.9'
+	},
+	firebaseConfig : {
+		apiKey				: "AIzaSyCGhPzGi8SgaQcdW8sGHi9zJBxOVNdIekI",
+		authDomain			: "test-credentials-app.firebaseapp.com",
+		databaseURL			: "https://test-credentials-app.firebaseio.com",
+		projectId			: "test-credentials-app",
+		storageBucket		: "test-credentials-app.appspot.com",
+		messagingSenderId	: "495885259390"
 	}
 };
